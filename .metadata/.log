@@ -587,3 +587,51 @@ java.io.FileNotFoundException: /org/eclipse/persistence/jaxb/eclipselink_oxm_2_5
 	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
 	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.eclipse.ui 2 2 2022-09-06 05:33:21.293
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-09-06 05:33:44.312
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-09-06 05:33:44.313
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@1b1434ce[org.springframework.tooling.boot.ls:1.32.0.202203131529(id=569)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-09-06 05:33:44.394
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-09-06 05:33:45.208
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-09-06 05:33:53.127
+!MESSAGE Boot LS startup time from start to initialized: 8719ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-09-06 05:33:53.274
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.uVWrFzJBisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-09-06 05:33:53.277
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-09-06 05:33:53.281
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-09-06 05:33:53.282
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-09-06 05:33:53.283
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-09-06 05:33:53.283
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.uVWrFzJB => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-09-06 05:33:53.337
+!MESSAGE classpath=90 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-09-06 05:33:53.344
+!MESSAGE buffering callback sts4.classpath.uVWrFzJB dscatalog false 90
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-09-06 05:33:53.345
+!MESSAGE executing callback sts4.classpath.uVWrFzJB 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-09-06 05:33:53.923
+!MESSAGE executing callback sts4.classpath.uVWrFzJB SUCCESS [done]
