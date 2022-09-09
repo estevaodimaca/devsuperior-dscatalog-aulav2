@@ -7,6 +7,10 @@ import java.util.stream.Collectors;
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -42,12 +46,6 @@ public class CategoryService {
 		Optional<Category> optionalCategory = categoryRepository.findById(id);
 		Category category = optionalCategory.orElseThrow(() -> new ResourceNotFoundException("Entity not Found"));
 
-//		List<CategoryDTO> categoryDTOs = new ArrayList<>();
-//		
-//		for (Category category : categories) {
-//			categoryDTOs.add(new CategoryDTO(category));
-//		}
-
 		return new CategoryDTO(category);
 	}
 
@@ -68,7 +66,25 @@ public class CategoryService {
 			return new CategoryDTO(category);
 		} catch (EntityNotFoundException e) {
 			throw new ResourceNotFoundException("Id not found " + id);
-		}
+		} 
 
+	}
+
+	public void delete(Long id) {
+		try {
+			categoryRepository.deleteById(id);
+		} catch (EmptyResultDataAccessException e) {
+			throw new ResourceNotFoundException("Id not found " + id);
+		}catch (DataIntegrityViolationException e) {
+			throw new DataIntegrityViolationException("Integrity violation ");
+		}		
+	}
+
+	public Page<CategoryDTO> findAllPaged(PageRequest pageRequest) {
+		Page<Category> categories = categoryRepository.findAll(pageRequest);
+
+		Page<CategoryDTO> categoryDTOs = categories.map(x -> new CategoryDTO(x));
+		return categoryDTOs;
+	
 	}
 }
