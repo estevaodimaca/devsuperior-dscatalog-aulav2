@@ -59,6 +59,7 @@ public class ProductService {
 	public ProductDTO insert(ProductDTO productDTO) {
 		Product product = new Product();
 		copyDtoToEntity(productDTO, product);
+		//product.setName(productDTO.getName());
 		product = productRepository.save(product);
 		return new ProductDTO(product);
 	}
@@ -70,6 +71,7 @@ public class ProductService {
 		try {
 			Product product = productRepository.getOne(id);
 			copyDtoToEntity(productDTO, product);
+			//product.setName(productDTO.getName());
 			productRepository.save(product);
 			return new ProductDTO(product);
 		} catch (EntityNotFoundException e) {
@@ -99,11 +101,9 @@ public class ProductService {
 	private void copyDtoToEntity(ProductDTO productDTO, Product product) {
 		product.setName(productDTO.getName());
 		product.setDescription(productDTO.getDescription());
-		product.setDate(productDTO.getDate()); 
-		product.setImgUrl(productDTO.getImgUrl()); 
 		product.setPrice(productDTO.getPrice()); 
-		
-		
+		product.setImgUrl(productDTO.getImgUrl()); 
+		product.setDate(product.getDate()); 
 		
 		product.getCategories().clear();
 		for (CategoryDTO categoryDTO : productDTO.getCategories()) {
